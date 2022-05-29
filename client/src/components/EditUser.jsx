@@ -8,7 +8,7 @@ import {
   Button,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { addUser, getUser } from "../service/api";
+import { editUser, getUser } from "../service/api";
 
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -48,8 +48,8 @@ const EditUser = () => {
     console.log(user);
   };
 
-  const addUserDetails = async () => {
-    await addUser(user);
+  const editUserDetails = async () => {
+    await editUser(id, user);
     navigate("/all");
   };
 
@@ -91,7 +91,7 @@ const EditUser = () => {
         </FormControl>
 
         <FormControl>
-          <Button variant="contained" onClick={() => addUserDetails()}>
+          <Button variant="contained" onClick={() => editUserDetails()}>
             Edit User
           </Button>
         </FormControl>
