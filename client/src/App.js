@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Routes>
-        <Route path="/" element={<AddUser />} />
+        <Route path="/" element={<AllUsers />} />
         <Route path="/add" element={<AddUser />} />
         <Route path="/all" element={<AllUsers />} />
         <Route path="/edit/:id" element={<EditUser />} />
