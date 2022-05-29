@@ -9,7 +9,7 @@ import {
   Button,
 } from "@mui/material";
 
-import { getUsers } from "../service/api";
+import { getUsers, deleteUser } from "../service/api";
 
 import { Link } from "react-router-dom";
 
@@ -41,7 +41,12 @@ const AllUsers = () => {
   const getAllUsers = async () => {
     let response = await getUsers();
     setUsers(response.data);
-    console.log(response.data);
+    // console.log(response.data);
+  };
+
+  const deleteUserDetails = async (id) => {
+    await deleteUser(id);
+    getAllUsers();
   };
 
   return (
@@ -74,7 +79,11 @@ const AllUsers = () => {
                 >
                   Edit
                 </Button>
-                <Button variant="contained" color="secondary">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={() => deleteUserDetails(user._id)}
+                >
                   Delete
                 </Button>
               </TableCell>
