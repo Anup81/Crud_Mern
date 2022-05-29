@@ -17,3 +17,7 @@ export const getUsers = async () => {
     console.log("Error while calling getUsers API", error);
   }
 };
+
+export const editUser = async (id, user) => {
+  return await axios.put(`${URL}/${id}`, user);
+};

@@ -27,7 +27,7 @@ const defaultValue = {
   phone: "",
 };
 
-const AddUser = () => {
+const EditUser = () => {
   const [user, setUser] = useState(defaultValue);
 
   const navigate = useNavigate();
@@ -46,7 +46,7 @@ const AddUser = () => {
   return (
     <div>
       <Container>
-        <Typography variant="h4">Add User</Typography>
+        <Typography variant="h4">Edit User</Typography>
         <FormControl>
           <InputLabel>Name</InputLabel>
           <Input onChange={(e) => onValueChange(e)} name="name" />
@@ -66,7 +66,7 @@ const AddUser = () => {
 
         <FormControl>
           <Button variant="contained" onClick={addUserDetails}>
-            Add User
+            Edit User
           </Button>
         </FormControl>
       </Container>
@@ -74,4 +74,4 @@ const AddUser = () => {
   );
 };
 
-export default AddUser;
+export default EditUser;
